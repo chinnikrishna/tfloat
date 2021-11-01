@@ -14,14 +14,11 @@ struct TFloat8_t {
     // Constructors
     TFloat8_t();
     TFloat8_t(const float fpNum, uint8_t bias=0);
-    TFloat8_t(const double fpNum, uint8_t bias=0);
     // Destructor
     ~TFloat8_t();
 
     // Assignment Operators
-    // TODO: Template overload =
     TFloat8_t & operator = (const float & fpNum);
-    TFloat8_t & operator = (const double & fpNum);
 
     // Comparision Operator
     bool operator == (const float & fpNum) const;
@@ -32,8 +29,7 @@ struct TFloat8_t {
     bool operator >= (const float & fpNum) const;
 
     // Conversion Operator
-    operator float();
-    operator double();
+    static float toFloat(const TFloat8_t tfNum);
 
     // Math operators
     TFloat8_t operator + (const float & fpNum) const;
